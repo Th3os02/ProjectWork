@@ -22,6 +22,7 @@ const App = () => {
                 <Sidebar collapsed={collapsed} />
                 <Layout className="site-layout">
                     <Navbar collapsed={collapsed} toggleSidebar={toggleSidebar} />
+                    <Content style={{ margin: '24px 16px', padding: 24, minHeight: 280 }}>
                         <Routes>
                             <Route 
                             path="/transactions" 
@@ -36,6 +37,7 @@ const App = () => {
                             element={<Parking />} 
                             />
                         </Routes>
+                    </Content>
                 </Layout>
             </Layout>
         </Router>

@@ -32,7 +32,6 @@ const Users = () => {
                     return acc;
                 }, {});
 
-                // Trasformare i dati raggruppati in un array e ordinarli
                 const formattedData = Object.keys(groupedData)
                     .map(month => ({
                         name: month,
@@ -42,7 +41,7 @@ const Users = () => {
 
                 setData(formattedData);
 
-                // Ordinare gli utenti per data di registrazione e prendere gli ultimi 5
+                
                 const sortedUsers = utenti.sort((a, b) => dayjs(b.Data_di_registrazione) - dayjs(a.Data_di_registrazione));
                 setRecentUsers(sortedUsers.slice(0, 5));
             }
