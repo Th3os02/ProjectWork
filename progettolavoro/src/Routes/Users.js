@@ -41,7 +41,6 @@ const Users = () => {
 
                 setData(formattedData);
 
-                
                 const sortedUsers = utenti.sort((a, b) => dayjs(b.Data_di_registrazione) - dayjs(a.Data_di_registrazione));
                 setRecentUsers(sortedUsers.slice(0, 5));
             }
@@ -55,21 +54,23 @@ const Users = () => {
             <Typography.Title level={2}>Utenti</Typography.Title>
             <Row gutter={16}>
                 <Col span={12}>
-                    <Card title="Statistiche">
+                    <Card title="Statistiche" style={{ height: '100%' }}>
                         <RecentUsers users={recentUsers} />
                     </Card>
                 </Col>
                 <Col span={12}>
-                    <Card title="Grafico degli utenti">
+                    <Card title="Grafico degli utenti" style={{ height: '100%' }}>
                         {data.length > 0 ? (
-                            <BarChart width={500} height={300} data={data}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" angle={-90} textAnchor="end" height={100} />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend />
-                                <Bar dataKey="count" fill="#8884d8" />
-                            </BarChart>
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <BarChart width={600} height={400} data={data}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name" angle={-90} textAnchor="end" height={100} />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Legend />
+                                    <Bar dataKey="count" fill="#8884d8" />
+                                </BarChart>
+                            </div>
                         ) : (
                             <p>Nessun dato disponibile</p>
                         )}
@@ -81,3 +82,10 @@ const Users = () => {
 };
 
 export default Users;
+
+/*
+-mettere gli utenti totali che usano l'app
+-quanti utenti si sono iscritti questo mese
+-quanti utenti sono attivi da più di 1 mese sull'app
+-creare qualche grafico
+*/

@@ -8,7 +8,6 @@ const Sidebar = () => (
     <Sider width={200} style={{ background: '#001529' }}>
         <Menu
             mode="inline"
-            defaultSelectedKeys={['1']}
             style={{ height: '100%', borderRight: 0 }}
             theme="dark" 
         >
