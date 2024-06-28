@@ -17,11 +17,6 @@ const Sidebar = ({ collapsed, showParking }) => (
             <Menu.Item key="3">
                 <Link to="/parking">Parking</Link>
             </Menu.Item>
-            {showParking && (
-                <Menu.Item key="3">
-                    <Link to="/parking">Parking</Link>
-                </Menu.Item>
-            )}
         </Menu>
     </Sider>
 );
