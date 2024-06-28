@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 
-
-const Sidebar = ({ collapsed, showParking }) => (
-    <Sider collapsible collapsed={collapsed}>
-        <Menu theme="dark" mode="inline">
+const Sidebar = () => (
+    <Sider width={200} style={{ background: '#001529' }}>
+        <Menu
+            mode="inline"
+            defaultSelectedKeys={['1']}
+            style={{ height: '100%', borderRight: 0 }}
+            theme="dark" 
+        >
             <Menu.Item key="1">
                 <Link to="/transactions">Transactions</Link>
             </Menu.Item>
