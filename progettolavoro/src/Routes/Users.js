@@ -13,10 +13,7 @@ const Users = () => {
                 .select('*');
 
             if (error) console.log('Error fetching data: ', error);
-            else {
-                console.log(users);  // Controlla la struttura dei dati
-                setData(users);
-            }
+            else setData(users);
         };
 
         fetchData();
