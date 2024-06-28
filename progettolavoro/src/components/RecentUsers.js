@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Avatar } from 'antd';
-import dayjs from 'dayjs'; // Importa dayjs qui
+import dayjs from 'dayjs';
 
 const RecentUsers = ({ users }) => {
     return (
