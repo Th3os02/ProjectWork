@@ -88,4 +88,5 @@ export default Users;
 -quanti utenti si sono iscritti questo mese
 -quanti utenti sono attivi da più di 1 mese sull'app
 -creare qualche grafico
+-grafico in che giorni della settimana l'applicazione viene più usata
 */

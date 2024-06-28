@@ -44,3 +44,10 @@ const Parking = () => {
 };
 
 export default Parking;
+
+/*
+-creare una tabella a linea con 3 linee che mostra l'affluenza nei parcheggi nelle diverse ore
+-mettere il numero di sensori messi, quelli attivi, multe fatte per non pagamento
+-tabella costi di manutenzione sensori
+-multe fatte per non pagamento
+*/

@@ -46,3 +46,11 @@ const Transactions = () => {
 };
 
 export default Transactions;
+
+/*
+-tabella pagamenti tramite app e non
+-di fianco grafico che mostra quale dei due è più usato
+-guadagni fatti questo mese
+-utenti attivi questo mese
+-numero transazioni totali questo mese
+*/
