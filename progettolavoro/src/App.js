@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import Transactions from './pages/Transactions';
-import Users from './pages/Users';
-import Parking from './pages/Parking';
+import Transactions from './Routes/Transactions';
+import Users from './Routes/Users';
+import Parking from './Routes/Parking';
 
 const { Content } = Layout;
 
