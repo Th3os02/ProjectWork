@@ -1,16 +1,15 @@
-// Users.jsx
-
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line } from 'recharts';
 import { Typography, Card, Row, Col } from 'antd';
 import dayjs from 'dayjs';
-import utentiData from '../dati/utenti.json'; 
-import RecentUsers from '../components/RecentUsers'; // Assicurati di importare correttamente il componente RecentUsers
-import StatCard from '../components/StatCards.js';
+import utentiData from '../dati/utenti.json';
+import RecentUsers from '../components/RecentUsers';
+import StatCard from '../components/StatCards';
 
 const Users = () => {
     const [data, setData] = useState([]);
     const [recentUsers, setRecentUsers] = useState([]);
+    const [lineChartData, setLineChartData] = useState([]);
 
     useEffect(() => {
         const fetchData = () => {
@@ -32,8 +31,15 @@ const Users = () => {
 
             setData(formattedData);
 
-            const sortedUsers = utentiData.sort((a, b) => dayjs(b.data_di_registrazione) - dayjs(a.data_di_registrazione));
+            const sortedUsers = [...utentiData].sort((a, b) => dayjs(b.data_di_registrazione) - dayjs(a.data_di_registrazione));
             setRecentUsers(sortedUsers.slice(0, 5));
+
+            // Creazione dei dati per il grafico a linea (esempio di dati casuali)
+            const lineData = weekDays.map((day, index) => ({
+                name: day,
+                value: Math.floor(Math.random() * 100) // Valore casuale per scopi di esempio
+            }));
+            setLineChartData(lineData);
         };
 
         fetchData();
@@ -45,28 +51,28 @@ const Users = () => {
             <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Users"
-                        number="48,345"
-                        percentage="+20% month over month"
+                        title="Utenti totali"
+                        number="8,345"
+                        percentage="+20% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="New users (current month)"
-                        number="3,750"
-                        percentage="+33% month over month"
+                        title="Nuovi utenti (questo mese)"
+                        number="40"
+                        percentage="+33% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="New users (semester)"
-                        number="13,468"
-                        percentage="-8% month over month"
+                        title="Utenti attivi (ultimi 7 giorni)"
+                        number="2,468"
+                        percentage="+15% settimana su settimana"
                     />
                 </Col>
             </Row>
             <Row gutter={16}>
-                <Col span={12}>
+                <Col span={8}>
                     <Card title="Statistiche" style={{ height: '100%' }}>
                         <RecentUsers users={recentUsers} />
                     </Card>
@@ -90,17 +96,33 @@ const Users = () => {
                     </Card>
                 </Col>
             </Row>
+            <Row gutter={16} style={{ marginTop: '16px' }}>
+                <Col span={12}>
+                    <Card title="Grafico utenti nel tempo" style={{ height: '100%' }}>
+                        {lineChartData.length > 0 ? (
+                            <LineChart width={600} height={400} data={lineChartData}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                            </LineChart>
+                        ) : (
+                            <p>Nessun dato disponibile</p>
+                        )}
+                    </Card>
+                </Col>
+                <Col span={12}>
+                    <Card title="si" style={{ height: '100%' }}>
+
+                            <p>Nessun dato disponibile</p>
+                        
+                    </Card>
+                </Col>
+            </Row>
         </div>
     );
 };
 
 export default Users;
-
-
-/*
--mettere gli utenti totali che usano l'app
--quanti utenti si sono iscritti questo mese
--quanti utenti sono attivi da più di 1 mese sull'app
--creare qualche grafico
--grafico in che giorni della settimana l'applicazione viene più usata <RecentUsers users={recentUsers} />
-*/
