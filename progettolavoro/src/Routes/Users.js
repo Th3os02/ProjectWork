@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, BarChart, Bar } from 'recharts';
 import { Typography, Card, Row, Col } from 'antd';
 import dayjs from 'dayjs';
 import utentiData from '../dati/utenti.json';
@@ -10,17 +10,32 @@ const Users = () => {
     const [data, setData] = useState([]);
     const [recentUsers, setRecentUsers] = useState([]);
     const [lineChartData, setLineChartData] = useState([]);
+    const [usageData, setUsageData] = useState([]);
 
     useEffect(() => {
         const fetchData = () => {
-            const weekDays = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+            const monthData = [
+                { name: 'Agosto', value: 0 },
+                { name: 'Settembre', value: 650 },
+                { name: 'Ottobre', value: 1350 },
+                { name: 'Novembre', value: 2200 },
+                { name: 'Dicembre', value: 3100 },
+                { name: 'Gennaio', value: 4200 },
+                { name: 'Febbraio', value: 5000 },
+                { name: 'Marzo', value: 6200 },
+                { name: 'Aprile', value: 7400 },
+                { name: 'Maggio', value: 7900 },
+                { name: 'Giugno', value: 8305 },
+                { name: 'Luglio', value: 8345 }
+            ];
 
-            // Inizializza un array di lunghezza 7 per contenere i conteggi per ciascun giorno della settimana
+            setLineChartData(monthData);
+
+            const weekDays = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
             const dayCounts = [0, 0, 0, 0, 0, 0, 0];
 
             utentiData.forEach(utente => {
                 const dayOfWeek = dayjs(utente.data_di_registrazione).day();
-                // Incrementa il conteggio per il giorno della settimana corrispondente
                 dayCounts[dayOfWeek]++;
             });
 
@@ -34,12 +49,18 @@ const Users = () => {
             const sortedUsers = [...utentiData].sort((a, b) => dayjs(b.data_di_registrazione) - dayjs(a.data_di_registrazione));
             setRecentUsers(sortedUsers.slice(0, 5));
 
-            // Creazione dei dati per il grafico a linea (esempio di dati casuali)
-            const lineData = weekDays.map((day, index) => ({
-                name: day,
-                value: Math.floor(Math.random() * 100) // Valore casuale per scopi di esempio
-            }));
-            setLineChartData(lineData);
+            
+            const fixedUsageData = [
+                { name: 'Domenica', count: 6750 },
+                { name: 'Lunedì', count: 4980 },
+                { name: 'Martedì', count: 3780 },
+                { name: 'Mercoledì', count: 3270 },
+                { name: 'Giovedì', count: 4070 },
+                { name: 'Venerdì', count: 5900 },
+                { name: 'Sabato', count: 7495 },
+            ];
+
+            setUsageData(fixedUsageData);
         };
 
         fetchData();
@@ -59,8 +80,8 @@ const Users = () => {
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
                         title="Nuovi utenti (questo mese)"
-                        number="40"
-                        percentage="+33% mese su mese"
+                        number="140"
+                        percentage="+13% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
@@ -72,13 +93,24 @@ const Users = () => {
                 </Col>
             </Row>
             <Row gutter={16}>
-                <Col span={8}>
-                    <Card title="Statistiche" style={{ height: '100%' }}>
-                        <RecentUsers users={recentUsers} />
+                <Col span={12}>
+                    <Card title="Grafico utenti nel tempo" style={{ height: '100%' }}>
+                        {lineChartData.length > 0 ? (
+                            <LineChart width={600} height={400} data={lineChartData}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
+                                <YAxis />
+                                <Tooltip />
+                                <Legend />
+                                <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                            </LineChart>
+                        ) : (
+                            <p>Nessun dato disponibile</p>
+                        )}
                     </Card>
                 </Col>
                 <Col span={12}>
-                    <Card title="Grafico degli utenti per giorno della settimana" style={{ height: '100%' }}>
+                    <Card title="Grafico utenti inscritti questa settimana" style={{ height: '100%' }}>
                         {data.length > 0 ? (
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
                                 <BarChart width={600} height={400} data={data}>
@@ -97,27 +129,27 @@ const Users = () => {
                 </Col>
             </Row>
             <Row gutter={16} style={{ marginTop: '16px' }}>
-                <Col span={12}>
-                    <Card title="Grafico utenti nel tempo" style={{ height: '100%' }}>
-                        {lineChartData.length > 0 ? (
-                            <LineChart width={600} height={400} data={lineChartData}>
-                                <CartesianGrid strokeDasharray="3 3" />
-                                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend />
-                                <Line type="monotone" dataKey="value" stroke="#8884d8" />
-                            </LineChart>
+                <Col span={8}>
+                    <Card title="Ultimi utenti inscritti" style={{ height: '100%' }}>
+                        <RecentUsers users={recentUsers} />
+                    </Card>
+                </Col>
+                <Col span={16}>
+                    <Card title="Utilizzo dell'app per giorno della settimana" style={{ height: '100%' }}>
+                        {usageData.length > 0 ? (
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                                <BarChart width={600} height={400} data={usageData}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
+                                    <YAxis tick={false}/>
+                                    <Tooltip />
+                                    <Legend />
+                                    <Bar dataKey="count" fill="#82ca9d" />
+                                </BarChart>
+                            </div>
                         ) : (
                             <p>Nessun dato disponibile</p>
                         )}
-                    </Card>
-                </Col>
-                <Col span={12}>
-                    <Card title="si" style={{ height: '100%' }}>
-
-                            <p>Nessun dato disponibile</p>
-                        
                     </Card>
                 </Col>
             </Row>

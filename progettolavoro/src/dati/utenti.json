@@ -221,62 +221,62 @@
     "nome": "Michela",
     "cognome": "Costantini",
     "email": "michela.costantini@example.com",
-    "data_di_registrazione": "2025-07-08T00:00:00Z"
+    "data_di_registrazione": "2025-07-01T00:00:00Z"
   },
   {
     "id": 33,
     "nome": "Luigi",
     "cognome": "Marchetti",
     "email": "luigi.marchetti@example.com",
-    "data_di_registrazione": "2025-07-08T00:00:00Z"
+    "data_di_registrazione": "2025-07-01T00:00:00Z"
   },
   {
     "id": 34,
     "nome": "Irene",
     "cognome": "Puglisi",
     "email": "irene.puglisi@example.com",
-    "data_di_registrazione": "2025-07-09T00:00:00Z"
+    "data_di_registrazione": "2025-07-01T00:00:00Z"
   },
   {
     "id": 35,
     "nome": "Filippo",
     "cognome": "Valli",
     "email": "filippo.valli@example.com",
-    "data_di_registrazione": "2025-07-09T00:00:00Z"
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
   },
   {
     "id": 36,
     "nome": "Serena",
     "cognome": "Riva",
     "email": "serena.riva@example.com",
-    "data_di_registrazione": "2025-07-10T00:00:00Z"
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
   },
   {
     "id": 37,
     "nome": "Giorgio",
     "cognome": "Mancini",
     "email": "giorgio.mancini@example.com",
-    "data_di_registrazione": "2025-07-11T00:00:00Z"
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
   },
   {
     "id": 38,
     "nome": "Claudia",
     "cognome": "Esposito",
     "email": "claudia.esposito@example.com",
-    "data_di_registrazione": "2025-07-12T00:00:00Z"
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
   },
   {
     "id": 39,
     "nome": "Francesco",
     "cognome": "Ricci",
     "email": "francesco.ricci@example.com",
-    "data_di_registrazione": "2025-07-12T00:00:00Z"
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
   },
   {
     "id": 40,
     "nome": "Silvia",
     "cognome": "Marino",
     "email": "silvia.marino@example.com",
-    "data_di_registrazione": "2025-07-13T00:00:00Z"
+    "data_di_registrazione": "2025-07-05T00:00:00Z"
   }
 ]
