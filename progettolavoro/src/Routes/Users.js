@@ -1,49 +1,39 @@
+// Users.jsx
+
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import supabase from '../supabaseClient';
 import { Typography, Card, Row, Col } from 'antd';
 import dayjs from 'dayjs';
-import RecentUsers from '../components/RecentUsers';
+import utentiData from '../dati/utenti.json'; 
+import RecentUsers from '../components/RecentUsers'; // Assicurati di importare correttamente il componente RecentUsers
+import StatCard from '../components/StatCards.js';
 
 const Users = () => {
     const [data, setData] = useState([]);
     const [recentUsers, setRecentUsers] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            let { data: utenti, error } = await supabase
-                .from('utente')
-                .select('*');
+        const fetchData = () => {
+            const weekDays = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
 
-            if (error) {
-                console.log('Error fetching data: ', error);
-            } else {
-                const monthOrder = [
-                    'January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'
-                ];
+            // Inizializza un array di lunghezza 7 per contenere i conteggi per ciascun giorno della settimana
+            const dayCounts = [0, 0, 0, 0, 0, 0, 0];
 
-                const groupedData = utenti.reduce((acc, utente) => {
-                    const month = dayjs(utente.Data_di_registrazione).format('MMMM');
-                    if (!acc[month]) {
-                        acc[month] = 0;
-                    }
-                    acc[month]++;
-                    return acc;
-                }, {});
+            utentiData.forEach(utente => {
+                const dayOfWeek = dayjs(utente.data_di_registrazione).day();
+                // Incrementa il conteggio per il giorno della settimana corrispondente
+                dayCounts[dayOfWeek]++;
+            });
 
-                const formattedData = Object.keys(groupedData)
-                    .map(month => ({
-                        name: month,
-                        count: groupedData[month]
-                    }))
-                    .sort((a, b) => monthOrder.indexOf(a.name) - monthOrder.indexOf(b.name));
+            const formattedData = weekDays.map((day, index) => ({
+                name: day,
+                count: dayCounts[index]
+            }));
 
-                setData(formattedData);
+            setData(formattedData);
 
-                const sortedUsers = utenti.sort((a, b) => dayjs(b.Data_di_registrazione) - dayjs(a.Data_di_registrazione));
-                setRecentUsers(sortedUsers.slice(0, 5));
-            }
+            const sortedUsers = utentiData.sort((a, b) => dayjs(b.data_di_registrazione) - dayjs(a.data_di_registrazione));
+            setRecentUsers(sortedUsers.slice(0, 5));
         };
 
         fetchData();
@@ -52,6 +42,29 @@ const Users = () => {
     return (
         <div>
             <Typography.Title level={2}>Utenti</Typography.Title>
+            <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="Users"
+                        number="48,345"
+                        percentage="+20% month over month"
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="New users (current month)"
+                        number="3,750"
+                        percentage="+33% month over month"
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="New users (semester)"
+                        number="13,468"
+                        percentage="-8% month over month"
+                    />
+                </Col>
+            </Row>
             <Row gutter={16}>
                 <Col span={12}>
                     <Card title="Statistiche" style={{ height: '100%' }}>
@@ -59,12 +72,12 @@ const Users = () => {
                     </Card>
                 </Col>
                 <Col span={12}>
-                    <Card title="Grafico degli utenti" style={{ height: '100%' }}>
+                    <Card title="Grafico degli utenti per giorno della settimana" style={{ height: '100%' }}>
                         {data.length > 0 ? (
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
                                 <BarChart width={600} height={400} data={data}>
                                     <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis dataKey="name" angle={-90} textAnchor="end" height={100} />
+                                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                                     <YAxis />
                                     <Tooltip />
                                     <Legend />
@@ -83,10 +96,11 @@ const Users = () => {
 
 export default Users;
 
+
 /*
 -mettere gli utenti totali che usano l'app
 -quanti utenti si sono iscritti questo mese
 -quanti utenti sono attivi da più di 1 mese sull'app
 -creare qualche grafico
--grafico in che giorni della settimana l'applicazione viene più usata
+-grafico in che giorni della settimana l'applicazione viene più usata <RecentUsers users={recentUsers} />
 */

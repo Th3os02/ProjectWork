@@ -8,11 +8,13 @@ const RecentUsers = ({ users }) => {
             itemLayout="horizontal"
             dataSource={users}
             renderItem={user => (
-                <List.Item>
+                <List.Item
+                    actions={[<span>{dayjs(user.data_di_registrazione).format('YYYY-MM-DD')}</span>]}
+                >
                     <List.Item.Meta
                         avatar={<Avatar src="https://via.placeholder.com/40" />}
-                        title={user.email}
-                        description={dayjs(user.Data_di_registrazione).format('YYYY-MM-DD')}
+                        title={`${user.nome} ${user.cognome}`}
+                        description={user.email}
                     />
                 </List.Item>
             )}

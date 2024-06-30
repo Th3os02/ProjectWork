@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "nome": "Francesco",
+    "cognome": "Birno",
+    "email": "birno@gmail.com",
+    "data_di_registrazione": "2025-07-01T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "nome": "Pino",
+    "cognome": "Limone",
+    "email": "p.limone@gmail.com",
+    "data_di_registrazione": "2025-07-01T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "nome": "Riccardo",
+    "cognome": "Lanza",
+    "email": "r.lanza@gmail.com",
+    "data_di_registrazione": "2025-07-02T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "nome": "Francesca",
+    "cognome": "Neri",
+    "email": "francesca.neri@example.com",
+    "data_di_registrazione": "2025-07-02T00:00:00Z"
+  },
+  {
+    "id": 5,
+    "nome": "Giovanni",
+    "cognome": "Ricci",
+    "email": "giovanni.ricci@example.com",
+    "data_di_registrazione": "2025-07-02T00:00:00Z"
+  },
+  {
+    "id": 6,
+    "nome": "Anna",
+    "cognome": "Colombo",
+    "email": "anna.colombo@example.com",
+    "data_di_registrazione": "2025-07-03T00:00:00Z"
+  },
+  {
+    "id": 7,
+    "nome": "Marco",
+    "cognome": "Esposito",
+    "email": "marco.esposito@example.com",
+    "data_di_registrazione": "2025-07-03T00:00:00Z"
+  },
+  {
+    "id": 8,
+    "nome": "Sara",
+    "cognome": "Conti",
+    "email": "sara.conti@example.com",
+    "data_di_registrazione": "2025-07-03T00:00:00Z"
+  },
+  {
+    "id": 9,
+    "nome": "Luca",
+    "cognome": "De Luca",
+    "email": "luca.deluca@example.com",
+    "data_di_registrazione": "2025-07-03T00:00:00Z"
+  },
+  {
+    "id": 10,
+    "nome": "Martina",
+    "cognome": "Lombardi",
+    "email": "martina.lombardi@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 11,
+    "nome": "Alessandro",
+    "cognome": "Moretti",
+    "email": "alessandro.moretti@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 12,
+    "nome": "Laura",
+    "cognome": "Galli",
+    "email": "laura.galli@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 13,
+    "nome": "Giuseppe",
+    "cognome": "Romano",
+    "email": "giuseppe.romano@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 14,
+    "nome": "Giulia",
+    "cognome": "Barbieri",
+    "email": "giulia.barbieri@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 15,
+    "nome": "Fabio",
+    "cognome": "Greco",
+    "email": "fabio.greco@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 16,
+    "nome": "Chiara",
+    "cognome": "Marino",
+    "email": "chiara.marino@example.com",
+    "data_di_registrazione": "2025-07-04T00:00:00Z"
+  },
+  {
+    "id": 17,
+    "nome": "Roberto",
+    "cognome": "Rizzi",
+    "email": "roberto.rizzi@example.com",
+    "data_di_registrazione": "2025-07-05T00:00:00Z"
+  },
+  {
+    "id": 18,
+    "nome": "Valentina",
+    "cognome": "Pellegrini",
+    "email": "valentina.pellegrini@example.com",
+    "data_di_registrazione": "2025-07-05T00:00:00Z"
+  },
+  {
+    "id": 19,
+    "nome": "Stefano",
+    "cognome": "Ferrara",
+    "email": "stefano.ferrara@example.com",
+    "data_di_registrazione": "2025-07-05T00:00:00Z"
+  },
+  {
+    "id": 20,
+    "nome": "Federica",
+    "cognome": "Russo",
+    "email": "federica.russo@example.com",
+    "data_di_registrazione": "2025-07-05T00:00:00Z"
+  },
+  {
+    "id": 21,
+    "nome": "Paolo",
+    "cognome": "Sala",
+    "email": "paolo.sala@example.com",
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
+  },
+  {
+    "id": 22,
+    "nome": "Francesca",
+    "cognome": "De Santis",
+    "email": "francesca.desantis@example.com",
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
+  },
+  {
+    "id": 23,
+    "nome": "Lorenzo",
+    "cognome": "Piras",
+    "email": "lorenzo.piras@example.com",
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
+  },
+  {
+    "id": 24,
+    "nome": "Elena",
+    "cognome": "Martini",
+    "email": "elena.martini@example.com",
+    "data_di_registrazione": "2025-07-06T00:00:00Z"
+  },
+  {
+    "id": 25,
+    "nome": "Davide",
+    "cognome": "Orlando",
+    "email": "davide.orlando@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 26,
+    "nome": "Alessia",
+    "cognome": "Giordano",
+    "email": "alessia.giordano@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 27,
+    "nome": "Riccardo",
+    "cognome": "Longo",
+    "email": "riccardo.longo@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 28,
+    "nome": "Simona",
+    "cognome": "Ruggieri",
+    "email": "simona.ruggieri@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 29,
+    "nome": "Matteo",
+    "cognome": "Fontana",
+    "email": "matteo.fontana@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 30,
+    "nome": "Elisa",
+    "cognome": "Lombardi",
+    "email": "elisa.lombardi@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 31,
+    "nome": "Gabriele",
+    "cognome": "Caruso",
+    "email": "gabriele.caruso@example.com",
+    "data_di_registrazione": "2025-07-07T00:00:00Z"
+  },
+  {
+    "id": 32,
+    "nome": "Michela",
+    "cognome": "Costantini",
+    "email": "michela.costantini@example.com",
+    "data_di_registrazione": "2025-07-08T00:00:00Z"
+  },
+  {
+    "id": 33,
+    "nome": "Luigi",
+    "cognome": "Marchetti",
+    "email": "luigi.marchetti@example.com",
+    "data_di_registrazione": "2025-07-08T00:00:00Z"
+  },
+  {
+    "id": 34,
+    "nome": "Irene",
+    "cognome": "Puglisi",
+    "email": "irene.puglisi@example.com",
+    "data_di_registrazione": "2025-07-09T00:00:00Z"
+  },
+  {
+    "id": 35,
+    "nome": "Filippo",
+    "cognome": "Valli",
+    "email": "filippo.valli@example.com",
+    "data_di_registrazione": "2025-07-09T00:00:00Z"
+  },
+  {
+    "id": 36,
+    "nome": "Serena",
+    "cognome": "Riva",
+    "email": "serena.riva@example.com",
+    "data_di_registrazione": "2025-07-10T00:00:00Z"
+  },
+  {
+    "id": 37,
+    "nome": "Giorgio",
+    "cognome": "Mancini",
+    "email": "giorgio.mancini@example.com",
+    "data_di_registrazione": "2025-07-11T00:00:00Z"
+  },
+  {
+    "id": 38,
+    "nome": "Claudia",
+    "cognome": "Esposito",
+    "email": "claudia.esposito@example.com",
+    "data_di_registrazione": "2025-07-12T00:00:00Z"
+  },
+  {
+    "id": 39,
+    "nome": "Francesco",
+    "cognome": "Ricci",
+    "email": "francesco.ricci@example.com",
+    "data_di_registrazione": "2025-07-12T00:00:00Z"
+  },
+  {
+    "id": 40,
+    "nome": "Silvia",
+    "cognome": "Marino",
+    "email": "silvia.marino@example.com",
+    "data_di_registrazione": "2025-07-13T00:00:00Z"
+  }
+]

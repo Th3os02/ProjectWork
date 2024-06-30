@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "nome": "Sensore Parcheggio 1",
+      "attivo": true
+    },
+    {
+      "id": 2,
+      "nome": "Sensore Parcheggio 2",
+      "attivo": true
+    },
+    {
+      "id": 3,
+      "nome": "Sensore Parcheggio 3",
+      "attivo": false
+    },
+    {
+      "id": 4,
+      "nome": "Sensore Parcheggio 4",
+      "attivo": true
+    },
+    {
+      "id": 5,
+      "nome": "Sensore Parcheggio 5",
+      "attivo": false
+    },
+    {
+      "id": 6,
+      "nome": "Sensore Parcheggio 6",
+      "attivo": true
+    },
+    {
+      "id": 7,
+      "nome": "Sensore Parcheggio 7",
+      "attivo": true
+    },
+    {
+      "id": 8,
+      "nome": "Sensore Parcheggio 8",
+      "attivo": false
+    },
+    {
+      "id": 9,
+      "nome": "Sensore Parcheggio 9",
+      "attivo": true
+    },
+    {
+      "id": 10,
+      "nome": "Sensore Parcheggio 10",
+      "attivo": true
+    },
+    {
+      "id": 11,
+      "nome": "Sensore Parcheggio 11",
+      "attivo": false
+    },
+    {
+      "id": 12,
+      "nome": "Sensore Parcheggio 12",
+      "attivo": true
+    },
+    {
+      "id": 13,
+      "nome": "Sensore Parcheggio 13",
+      "attivo": false
+    },
+    {
+      "id": 14,
+      "nome": "Sensore Parcheggio 14",
+      "attivo": true
+    },
+    {
+      "id": 15,
+      "nome": "Sensore Parcheggio 15",
+      "attivo": true
+    },
+    {
+      "id": 16,
+      "nome": "Sensore Parcheggio 16",
+      "attivo": false
+    },
+    {
+      "id": 17,
+      "nome": "Sensore Parcheggio 17",
+      "attivo": true
+    },
+    {
+      "id": 18,
+      "nome": "Sensore Parcheggio 18",
+      "attivo": false
+    },
+    {
+      "id": 19,
+      "nome": "Sensore Parcheggio 19",
+      "attivo": true
+    },
+    {
+      "id": 20,
+      "nome": "Sensore Parcheggio 20",
+      "attivo": true
+    }
+  ]
