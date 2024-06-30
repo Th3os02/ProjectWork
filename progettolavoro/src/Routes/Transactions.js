@@ -1,25 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import supabase from '../supabaseClient';
+import React from 'react';
 import { Typography, Row, Col } from 'antd';
 import StatCard from '../components/StatCards';
 import TransactionTable from '../components/TransactionTable';
 import LineChartCard from '../components/LineChartCard'; 
 
 const Transactions = () => {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            let { data: transactions, error } = await supabase
-                .from('transactions')
-                .select('*');
-
-            if (error) console.log('Error fetching data: ', error);
-            else setData(transactions);
-        };
-
-        fetchData();
-    }, []);
 
     return (
         <div>
@@ -60,12 +45,3 @@ const Transactions = () => {
 };
 
 export default Transactions;
-
-
-/*
--tabella pagamenti tramite app e non
--di fianco grafico che mostra quale dei due è più usato
--guadagni fatti questo mese
--utenti attivi questo mese
--numero transazioni totali questo mese
-*/

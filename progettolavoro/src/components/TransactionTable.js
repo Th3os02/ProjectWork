@@ -3,7 +3,7 @@ import { Card } from 'antd';
 
 const TransactionTable = () => {
     return (
-        <Card title="Statistiche">
+        <Card title="Statistiche" style={{height: '100%' }}>
             <div style={{ overflowX: 'auto' }}>
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
                     <div style={{ minWidth: '120px' }}>Fonte</div>
