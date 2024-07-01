@@ -1,22 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Card, Row, Col } from 'antd';
 import StatCard from '../components/StatCards';
-import sensoriData from '../dati/sensori.json'; // importa il file JSON
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://your-supabase-url.supabase.co';
+const supabaseKey = 'your-supabase-key'; 
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Parking = () => {
     const [sensorCount, setSensorCount] = useState(0);
     const [activeSensorCount, setActiveSensorCount] = useState(0);
+    const [segnalazioniCount, setSegnalazioniCount] = useState(0);
 
     useEffect(() => {
-        // Conta i sensori totali e quelli attivi
         const countSensors = () => {
+        
+            const sensoriData = require('../dati/sensori.json');
             const totalSensors = sensoriData.length;
             const activeSensors = sensoriData.filter(sensor => sensor.attivo).length;
             setSensorCount(totalSensors);
             setActiveSensorCount(activeSensors);
         };
 
+        const countSegnalazioni = async () => {
+            const { data, error, count } = await supabase
+                .from('segnalazioni')
+                .select('id')
+                .count(); 
+
+            if (error) {
+                console.error('Errore durante il recupero delle segnalazioni:', error.message);
+                return;
+            }
+
+            setSegnalazioniCount(count);
+        };
         countSensors();
+        countSegnalazioni();
     }, []);
 
     return (
@@ -39,9 +59,9 @@ const Parking = () => {
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Multe fatte per mancato pagamento"
-                        number=""
-                        percentage="+15% settimana su settimana"
+                        title="Segnalazioni fatte"
+                        number={segnalazioniCount} 
+                        percentage=""
                     />
                 </Col>
             </Row>
