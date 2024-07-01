@@ -9,9 +9,16 @@ const Parking = () => {
             <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Sensori posizionati(nel comune)"
+                        title="Sensori posizionati nel comune"
                         number=""
-                        percentage="+10% mese su mese"
+                        percentage=""
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="sensori attivi nel comune"
+                        number=""
+                        percentage=""
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
@@ -43,6 +50,5 @@ export default Parking;
 /*
 -creare una tabella a linea con 3 linee che mostra l'affluenza nei parcheggi nelle diverse ore
 -mettere il numero di sensori messi, quelli attivi, multe fatte per non pagamento
--tabella costi di manutenzione sensori
 -multe fatte per non pagamento
 */

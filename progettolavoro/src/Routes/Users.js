@@ -72,8 +72,8 @@ const Users = () => {
             <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Utenti totali"
-                        number="178,345"
+                        title="Utenti totali nel comune"
+                        number="8,345"
                         percentage="+20% mese su mese"
                     />
                 </Col>
@@ -81,13 +81,13 @@ const Users = () => {
                     <StatCard
                         title="Nuovi utenti nel comune(questa settimana)"
                         number="40"
-                        percentage="+7% mese su mese"
+                        percentage="+7% settimana su settimana"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
                         title="Utenti attivi (ultimi 7 giorni)"
-                        number="112,468"
+                        number="5,468"
                         percentage="+15% settimana su settimana"
                     />
                 </Col>

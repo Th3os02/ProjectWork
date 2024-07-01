@@ -7,13 +7,13 @@ const TransactionTable = () => {
             <div style={{ overflowX: 'auto' }}>
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between', fontWeight: 'bold' }}>
                     <div style={{ minWidth: '120px' }}>Fonte</div>
-                    <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>Sessioni</div>
+                    <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>Sessione</div>
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>Prezzo</div>
                 </div>
                 <hr />
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
                     <div style={{ minWidth: '120px' }}>App</div>
-                    <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>4321</div>
+                    <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>4321</div>  
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>2,50$</div>
                 </div>
                 <hr />
