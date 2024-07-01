@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Card, Row, Col } from 'antd';
 import StatCard from '../components/StatCards';
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = 'https://your-supabase-url.supabase.co';
-const supabaseKey = 'your-supabase-key'; 
-const supabase = createClient(supabaseUrl, supabaseKey);
+import ParkingChart from '../components/ParkingChart'; // Importa il componente del grafico
+import parkingData from '../dati/parcheggi.json'; // Importa i dati dei parcheggi dal JSON
 
 const Parking = () => {
     const [sensorCount, setSensorCount] = useState(0);
     const [activeSensorCount, setActiveSensorCount] = useState(0);
-    const [segnalazioniCount, setSegnalazioniCount] = useState(0);
 
     useEffect(() => {
+        // Simula il conteggio dei sensori (da sostituire con la logica effettiva)
         const countSensors = () => {
-        
             const sensoriData = require('../dati/sensori.json');
             const totalSensors = sensoriData.length;
             const activeSensors = sensoriData.filter(sensor => sensor.attivo).length;
@@ -22,22 +18,28 @@ const Parking = () => {
             setActiveSensorCount(activeSensors);
         };
 
-        const countSegnalazioni = async () => {
-            const { data, error, count } = await supabase
-                .from('segnalazioni')
-                .select('id')
-                .count(); 
-
-            if (error) {
-                console.error('Errore durante il recupero delle segnalazioni:', error.message);
-                return;
-            }
-
-            setSegnalazioniCount(count);
-        };
         countSensors();
-        countSegnalazioni();
     }, []);
+
+    const calculateParkingStats = () => {
+        const totalParcheggi = parkingData.parcheggi.reduce((acc, parcheggio) => acc + parcheggio.posti_totali, 0);
+        
+        const totalParcheggiAPagamento = parkingData.parcheggi
+            .filter(p => p.a_pagamento)
+            .reduce((acc, parcheggio) => acc + parcheggio.posti_totali, 0);
+        
+        const totalParcheggiNonAPagamento = parkingData.parcheggi
+            .filter(p => !p.a_pagamento)
+            .reduce((acc, parcheggio) => acc + parcheggio.posti_totali, 0);
+    
+        return {
+            totalParcheggi,
+            totalParcheggiAPagamento,
+            totalParcheggiNonAPagamento,
+        };
+    };
+
+    const { totalParcheggi, totalParcheggiAPagamento, totalParcheggiNonAPagamento } = calculateParkingStats();
 
     return (
         <div>
@@ -60,20 +62,34 @@ const Parking = () => {
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
                         title="Segnalazioni fatte"
-                        number={segnalazioniCount} 
-                        percentage=""
+                        number="0"
+                    />
+                </Col>
+            </Row>
+            <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="Totale parcheggi nel comune"
+                        number={totalParcheggi}
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="Totale parcheggi a pagamento"
+                        number={totalParcheggiAPagamento}
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="Totale parcheggi non a pagamento"
+                        number={totalParcheggiNonAPagamento}
                     />
                 </Col>
             </Row>
             <Row gutter={16}>
-                <Col span={12}>
-                    <Card title="Statistiche">
-                        {/* Inserisci qui le statistiche */}
-                    </Card>
-                </Col>
-                <Col span={12}>
-                    <Card title="Grafico dei parcheggi">
-                        {/* Inserisci qui il grafico */}
+                <Col span={24}>
+                    <Card title="Grafico delle ore di punta dei parcheggi">
+                        <ParkingChart />
                     </Card>
                 </Col>
             </Row>

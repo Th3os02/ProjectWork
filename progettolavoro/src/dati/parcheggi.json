@@ -1,0 +1,35 @@
+{
+    "parcheggi": [
+      {
+        "id": 1,
+        "nome": "Parcheggio Centro Commerciale",
+        "indirizzo": "Via dei Parcheggiatori, 123",
+        "posti_totali": 20,
+        "a_pagamento": true,
+        "tariffa_app": 2.5,
+        "tariffa_parchimetro": 3.0,
+        "orario_apertura": "08:00",
+        "orario_chiusura": "20:00"
+      },
+      {
+        "id": 2,
+        "nome": "Parcheggio Stazione Ferroviaria",
+        "indirizzo": "Piazza della Stazione, 1",
+        "posti_totali": 30,
+        "a_pagamento": false,
+        "orario_apertura": "07:30",
+        "orario_chiusura": "21:30"
+      },
+      {
+        "id": 3,
+        "nome": "Parcheggio Piazza Municipio",
+        "indirizzo": "Piazza Municipio, 5",
+        "posti_totali": 50,
+        "a_pagamento": true,
+        "tariffa_app": 3.0,
+        "tariffa_parchimetro": 3.5,
+        "orario_apertura": "24 ore",
+        "orario_chiusura": "24 ore"
+      }
+    ]
+  }
