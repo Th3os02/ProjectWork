@@ -14,16 +14,16 @@ const Sidebar = () => {
                 mode="inline"
                 style={{ height: '100%', borderRight: 0 }}
                 theme="dark"
-                selectedKeys={[selectedKey]} // Imposta la root selezionata
+                selectedKeys={[selectedKey]} 
             >
                 <Menu.Item key="/transactions">
-                    <Link to="/transactions">Transactions</Link>
+                    <Link to="/transactions">Transazioni</Link>
                 </Menu.Item>
                 <Menu.Item key="/users">
-                    <Link to="/users">Users</Link>
+                    <Link to="/users">Utenti</Link>
                 </Menu.Item>
                 <Menu.Item key="/parking">
-                    <Link to="/parking">Parking</Link>
+                    <Link to="/parking">Parcheggi</Link>
                 </Menu.Item>
             </Menu>
         </Sider>

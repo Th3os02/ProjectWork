@@ -96,7 +96,7 @@ const Users = () => {
                 <Col span={12}>
                     <Card title="Grafico utenti nel tempo" style={{ height: '100%' }}>
                         {lineChartData.length > 0 ? (
-                            <LineChart width={600} height={400} data={lineChartData}>
+                            <LineChart width={700} height={400} data={lineChartData}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                                 <YAxis />
@@ -110,10 +110,10 @@ const Users = () => {
                     </Card>
                 </Col>
                 <Col span={12}>
-                    <Card title="Grafico utenti inscritti questa settimana" style={{ height: '100%' }}>
+                    <Card title="Grafico utenti iscritti questa settimana" style={{ height: '100%' }}>
                         {data.length > 0 ? (
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <BarChart width={600} height={400} data={data}>
+                                <BarChart width={700} height={400} data={data}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                                     <YAxis />
@@ -130,7 +130,7 @@ const Users = () => {
             </Row>
             <Row gutter={16} style={{ marginTop: '16px' }}>
                 <Col span={8}>
-                    <Card title="Ultimi utenti inscritti" style={{ height: '100%' }}>
+                    <Card title="Ultimi utenti iscritti" style={{ height: '100%' }}>
                         <RecentUsers users={recentUsers} />
                     </Card>
                 </Col>
@@ -138,7 +138,7 @@ const Users = () => {
                     <Card title="Utilizzo dell'app per giorno della settimana" style={{ height: '100%' }}>
                         {usageData.length > 0 ? (
                             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <BarChart width={600} height={400} data={usageData}>
+                                <BarChart width={700} height={400} data={usageData}>
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
                                     <YAxis tick={false}/>

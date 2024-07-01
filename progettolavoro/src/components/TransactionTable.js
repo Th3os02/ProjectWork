@@ -30,13 +30,13 @@ const TransactionTable = () => {
                 </div>
                 <hr />
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ minWidth: '120px' }}>Street</div>
+                    <div style={{ minWidth: '120px' }}>Parchimetro</div>
                     <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>2104</div>
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>2,50$</div>
                 </div>
                 <hr />
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ minWidth: '120px' }}>Street</div>
+                    <div style={{ minWidth: '120px' }}>Parchimetro</div>
                     <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>2003</div>
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>3,00$</div>
                 </div>
@@ -48,7 +48,7 @@ const TransactionTable = () => {
                 </div>
                 <hr />
                 <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ minWidth: '120px' }}>Street</div>
+                    <div style={{ minWidth: '120px' }}>Parchimetro</div>
                     <div style={{ textAlign: 'right', flex: 1, marginLeft: '24px' }}>405</div>
                     <div style={{ textAlign: 'right', minWidth: '100px' }}>4,33$</div>
                 </div>

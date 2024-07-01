@@ -21,7 +21,7 @@ const Navbar = ({ collapsed, toggleSidebar }) => {
                 &lt;
             </Button>
             <div style={{ display: 'flex', alignItems: 'center', marginRight: '16px', color:'white' }}>
-                <span style={{marginRight: '10px'}}>Riccardo Lanza</span>
+                <span style={{marginRight: '10px'}}>Riccardo</span>
                 <Avatar style={{ backgroundColor: '#87d068', marginRight: '8px' }} icon={<UserOutlined />} />
             </div>
         </Header>
