@@ -12,22 +12,15 @@ const Transactions = () => {
             <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Guadagni"
-                        number="8,345"
-                        percentage="+20% mese su mese"
+                        title="Guadagni questo mese"
+                        number="€148,956"
+                        percentage="+10% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="boh"
-                        number=""
-                        percentage="+13% mese su mese"
-                    />
-                </Col>
-                <Col xs={24} sm={12} md={8}>
-                    <StatCard
-                        title="Transazioni"
-                        number=""
+                        title="Transazioni questa settimana"
+                        number="11,967"
                         percentage="+15% settimana su settimana"
                     />
                 </Col>

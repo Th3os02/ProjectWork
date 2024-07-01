@@ -1,11 +1,27 @@
-import { PieChart, Pie, Tooltip, Legend } from 'recharts';
 import { Typography, Card, Row, Col } from 'antd';
+import StatCard from '../components/StatCards';
 
 const Parking = () => {
     
     return (
         <div>
             <Typography.Title level={2}>Parcheggi</Typography.Title>
+            <Row justify="center" gutter={16} style={{ marginBottom: '16px' }}>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="Sensori posizionati(nel comune)"
+                        number=""
+                        percentage="+10% mese su mese"
+                    />
+                </Col>
+                <Col xs={24} sm={12} md={8}>
+                    <StatCard
+                        title="multe fatte per mancato pagamento"
+                        number=""
+                        percentage="+15% settimana su settimana"
+                    />
+                </Col>
+            </Row>
             <Row gutter={16}>
                 <Col span={12}>
                     <Card title="Statistiche">

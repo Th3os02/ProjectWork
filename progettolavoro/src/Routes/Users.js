@@ -31,7 +31,7 @@ const Users = () => {
 
             setLineChartData(monthData);
 
-            const weekDays = ['Domenica', 'Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato'];
+            const weekDays = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Venerdì', 'Sabato','Domenica'];
             const dayCounts = [0, 0, 0, 0, 0, 0, 0];
 
             utentiData.forEach(utente => {
@@ -51,13 +51,13 @@ const Users = () => {
 
             
             const fixedUsageData = [
-                { name: 'Domenica', count: 6750 },
                 { name: 'Lunedì', count: 4980 },
                 { name: 'Martedì', count: 3780 },
                 { name: 'Mercoledì', count: 3270 },
                 { name: 'Giovedì', count: 4070 },
                 { name: 'Venerdì', count: 5900 },
-                { name: 'Sabato', count: 7495 },
+                { name: 'Sabato', count: 6750 },
+                { name: 'Domenica', count: 7495 }, 
             ];
 
             setUsageData(fixedUsageData);
@@ -73,21 +73,21 @@ const Users = () => {
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
                         title="Utenti totali"
-                        number="8,345"
+                        number="178,345"
                         percentage="+20% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
-                        title="Nuovi utenti (questo mese)"
-                        number="140"
-                        percentage="+13% mese su mese"
+                        title="Nuovi utenti nel comune(questa settimana)"
+                        number="40"
+                        percentage="+7% mese su mese"
                     />
                 </Col>
                 <Col xs={24} sm={12} md={8}>
                     <StatCard
                         title="Utenti attivi (ultimi 7 giorni)"
-                        number="2,468"
+                        number="112,468"
                         percentage="+15% settimana su settimana"
                     />
                 </Col>
