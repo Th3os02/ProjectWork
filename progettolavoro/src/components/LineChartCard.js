@@ -6,12 +6,10 @@ import jsonData from '../dati/data.json';
 const { Option } = Select;
 
 const LineChartCard = () => {
-    const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState('Gennaio');
 
     useEffect(() => {
-        setData(jsonData);
         setFilteredData(jsonData.filter(item => item.month === selectedMonth));
     }, [selectedMonth]);
 
@@ -42,4 +40,3 @@ const LineChartCard = () => {
 };
 
 export default LineChartCard;
-

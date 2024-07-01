@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Card, Row, Col } from 'antd';
 import StatCard from '../components/StatCards';
-import ParkingChart from '../components/ParkingChart'; // Importa il componente del grafico
-import parkingData from '../dati/parcheggi.json'; // Importa i dati dei parcheggi dal JSON
+import ParkingChart from '../components/ParkingChart'; 
+import parkingData from '../dati/parcheggi.json'; 
 
 const Parking = () => {
     const [sensorCount, setSensorCount] = useState(0);
     const [activeSensorCount, setActiveSensorCount] = useState(0);
 
     useEffect(() => {
-        // Simula il conteggio dei sensori (da sostituire con la logica effettiva)
+
         const countSensors = () => {
             const sensoriData = require('../dati/sensori.json');
             const totalSensors = sensoriData.length;
