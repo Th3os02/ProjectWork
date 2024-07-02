@@ -96,6 +96,7 @@ const Users = () => {
                 <Col span={12}>
                     <Card title="Grafico utenti nel tempo" style={{ height: '100%' }}>
                         {lineChartData.length > 0 ? (
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>
                             <LineChart width={700} height={400} data={lineChartData}>
                                 <CartesianGrid strokeDasharray="3 3" />
                                 <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
@@ -104,6 +105,7 @@ const Users = () => {
                                 <Legend />
                                 <Line type="monotone" dataKey="value" stroke="#8884d8" />
                             </LineChart>
+                            </div>
                         ) : (
                             <p>Nessun dato disponibile</p>
                         )}
