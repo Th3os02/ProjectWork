@@ -22,7 +22,7 @@ const App = () => {
                 <Navbar collapsed={collapsed} toggleSidebar={toggleSidebar} />
                 <Layout>
                     <Sidebar collapsed={collapsed} />
-                    <Layout className="site-layout">
+                    <Layout >
                         <Content style={{ margin: '24px 16px', padding: 24, minHeight: 280 }}>
                             <Routes>
                                 <Route path="/" element={<Navigate to="/transactions" replace />} />
